@@ -1,0 +1,254 @@
+Question 1 – Hospital Patient Queue
+
+1. Data Structure Identification
+
+The most appropriate data structure for this scenario is a Queue.
+
+2. Why is Queue suitable?
+
+A Queue follows the FIFO (First-In, First-Out) principle.
+
+This means:
+
+The patient who arrives first will be served first.
+A new patient is added at the end of the queue.
+The patient waiting at the front is served first.
+This maintains the correct order of patients.
+Example:
+Patients arrive:
+
+Ravi → Priya → Kumar
+
+Serve order:
+
+Ravi → Priya → Kumar
+
+So, a Queue is suitable because hospital patients should be treated in the same order in which they arrive.
+
+3. Python Implementation
+queue = []
+
+while True:
+    print("\n1. Add Patient")
+    print("2. Serve Patient")
+    print("3. Display Waiting Patients")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        patient = input("Enter patient name: ")
+        queue.append(patient)
+        print("Patient added successfully")
+
+    elif choice == 2:
+        if len(queue) == 0:
+            print("No patients waiting")
+        else:
+            patient = queue.pop(0)
+            print("Serving patient:", patient)
+
+    elif choice == 3:
+        if len(queue) == 0:
+            print("No patients waiting")
+        else:
+            print("Waiting patients:")
+            for patient in queue:
+                print(patient)
+
+    elif choice == 4:
+        print("Thank you")
+        break
+
+    else:
+        print("Invalid choice")
+
+4. Demonstration of Operations
+
+1. Add patient
+2. Serve patient
+3. Display waiting patient
+4. Exit
+Enter your choice: 2
+Serving patient: Priya
+
+1. Add patient
+2. Serve patient
+3. Display waiting patient
+4. Exit
+Enter your choice: 3
+No patient waiting
+
+1. Add patient
+2. Serve patient
+3. Display waiting patient
+4. Exit
+Enter your choice: 4
+Thank you
+
+
+question 2.Web Browser History Using Stack
+
+1. Problem Statement
+
+A web browser stores the web pages visited by a user. When the user clicks the Back button, the browser should return to the most recently visited page.
+
+For example:
+
+Google → YouTube → Instagram → Wikipedia
+
+If the user clicks Back, the browser goes:
+
+Wikipedia → Instagram
+
+Again:
+
+Instagram → YouTube
+
+This behaviour follows the LIFO (Last In, First Out) principle.
+
+2. Appropriate Data Structure
+Stack
+
+The most appropriate data structure for this problem is a Stack.
+
+A Stack follows the principle:
+
+LIFO – Last In, First Out
+
+It means that the last element inserted into the Stack is the first element removed.
+
+Example:
+Google
+YouTube
+Instagram
+Wikipedia ← Last visited
+
+When Back is clicked:
+
+Wikipedia ← removed first
+Instagram ← next
+YouTube
+Google
+
+Therefore, Stack is suitable for browser history.
+
+3. Why is Stack Suitable?
+
+Stack is suitable because the browser's Back button works according to LIFO.
+
+When a user visits a new page, that page is added to the top of the Stack.
+
+When the user clicks Back, the most recently visited page is removed from the top of the Stack.
+
+4. python code
+
+history = []
+
+while True:
+    print("\n1. Visit Page")
+    print("2. Go Back")
+    print("3. Display History")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        page = input("Enter page name: ")
+        history.append(page)
+        print("Page visited:", page)
+
+    elif choice == 2:
+        if len(history) > 1:
+            history.pop()
+            print("Went back to:", history[-1])
+        else:
+            print("No previous page available")
+
+    elif choice == 3:
+        print("Browsing History:")
+        for page in history:
+            print(page)
+
+    elif choice == 4:
+        print("Exiting...")
+        break
+
+    else:
+        print("Invalid choice")
+
+4.Demonstration of operation
+
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 1
+Enter page name: Google
+Page visited: Google
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 1
+Enter page name: Youtube
+Page visited: Youtube
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 1
+Enter page name: Instagram
+Page visited: Instagram
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 1
+Enter page name: Wikipedia
+Page visited: Wikipedia
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 2
+Went back to: Instagram
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 3
+Browsing History:
+Google
+Youtube
+Instagram
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 2
+Went back to: Youtube
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 3
+Browsing History:
+Google
+Youtube
+
+1. Visit Page
+2. Go Back
+3. Display History
+4. Exit
+Enter your choice: 4
+Exiting
+
