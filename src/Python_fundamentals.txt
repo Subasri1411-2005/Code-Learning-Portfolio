@@ -1,0 +1,252 @@
+1. A customer buys 3 products with different prices. Write a Python program to calculate the total bill and check whether the customer is eligible for a 10% discount if the total exceeds ₹2,000.
+
+INPUT
+a=500
+b=600
+c=400
+total=a+b+c
+if total>2000:
+    print("customer is eligible for 10% discount")
+else:
+    print("customer is not eligible for 10% discount")
+    
+
+OUTPUT
+customer is not eligible for 10% discount1
+
+2. A student has marks in 5 subjects. Write a program to calculate the total and average marks and display the grade based on the average: 90 and above → A,75–89 → B,60–74 → C,50–59 → D, below 50 → Fail.
+
+INPUT
+
+sub1=90
+sub2=85
+sub3=60
+sub4=75
+sub5=45
+total=sub1+sub2+sub3+sub4+sub5
+average=total/5
+if average>=90:
+    print("student got A grade")
+elif average>=75 and average<=89:
+    print("student got the B grade")
+elif average>=60 and average<=74:
+    print("student got the C grade")
+elif average>=50 and average<=59:
+     print("student got the D grade")
+else:
+     print("student got a fail")
+OUTPUT
+student got the C grade
+
+
+3. An employee has a basic salary. Calculate HRA (20%), DA (10%), and gross salary. If the gross salary is above ₹50,000, calculate a 10% tax; otherwise, calculate a 5% tax. 
+
+A cab charges ₹50 as a base fare and ₹15 per kilometre. Write a program to calculate the total
+
+INPUT
+
+basic = float(input("Enter the basic salary:"))
+hra = basic*20/100
+da = basic*10/100
+gross =basic+hra+da
+if gross>50000:
+    print("Employee consume the 10%")  
+else:
+    print("Employee consume the 5%")
+
+OUTPUT
+
+Enter the basic salary:40000
+Employee consume the 10%
+
+4. A cab charges ₹50 as a base fare and ₹15 per kilometre. Write a program to calculate the total fare based on the distance travelled. If the distance is more than 20 km, give a 10% discount
+
+INPUT
+
+basefare =50
+kilometer = int(input("Enter the kilo meter:"))
+extracharge=kilometer*15
+total= basefare+extracharge
+if kilometer>20:
+    print("after discount",total*10/100)
+else:
+    print("no discount",total)    
+
+OUTPUT
+
+Enter the kilo meter:22
+after discount 38.0
+
+
+
+5. Write a program to simulate an ATM withdrawal. Given the account balance and withdrawal amount, check: 
+
+Whether sufficient balance is available.  
+
+If yes, calculate and display the remaining balance.  
+
+If no, display "Insufficient Balance". 
+
+
+INPUT
+
+acountbalance =5000
+withdrawalamount =int(input("enter the amount:"))
+remainingmoney =acountbalance-withdrawalamount
+if remainingmoney>1000:
+    print("customer have a sufficient money",remainingmoney)
+else:
+    print("insufficient money")    
+
+OUTPUT
+
+7. enter the amount:2000
+customer have a sufficient money 3000
+
+An online store gives discounts based on purchase amount: 
+
+₹5,000 or above → 20%  
+
+₹3,000–₹4,999 → 15%  
+
+₹1,000–₹2,999 → 10%  
+
+Below ₹1,000 → No discount 
+
+INPUT
+
+purchaseamount =int(input("Enter the amount:"))
+if purchaseamount>=5000:
+    print(purchaseamount*20/100)
+elif purchaseamount>=3000 and purchaseamount<=4999:
+    print(purchaseamount*15/100)
+elif purchaseamount>=1000 and purchaseamount<=2999:
+    print(purchaseamount*10/100)
+else:
+    print("no discount",purchaseamount) 
+
+OUTPUT
+
+Enter the amount:7000
+1400.0    
+
+
+
+6. Write a Python program to convert temperature from Celsius to Fahrenheit. Then display:
+
+· Cold" if temperature is below 20°C
+
+· "Normal" if temperature is 20–30°C
+
+· "Hot" if the temperature is above 30°C
+
+INPUT
+
+celsius = float(input("Enter the temperature in celsius:"))
+fahrenheit =(celsius*9/5)+32
+print("Temperature in fahrenheit:",fahrenheit)
+if celsius<20:
+    print("cold")
+elif 20<= celsius <=30:
+    print("normal")
+else:
+    print("hot")
+
+OUTPUT
+
+Enter the temperature in celsius:18
+Temperature in fahrenheit: 64.4
+cold
+
+8. A car travels a certain distance and gives a mileage of 18 km/litre. Given the distance and petrol price per litre, calculate:
+
+· Fuel required
+
+· Total fuel cost
+
+If the fuel cost exceeds ₹2,000, display "High Travel Cost"; otherwise, display "Travel Cost is Normal".
+
+INPUT
+
+distance =float(input("Enter the distance in km:"))
+petrol_price =float(input("Enter the petrol_price per litre:"))
+fuel =distance/2
+cost =fuel*petrol_price
+print("Fuel required:",fuel)
+print("'Total fuel cost:",cost)
+if cost>2000:
+    print("High travel cost")
+else:
+    print("Travel cost is normal")    
+
+OUTPUT
+
+Enter the distance in km:9
+Enter the petrol_price per litre:100
+Fuel required: 4.5
+'Total fuel cost: 450.0
+Travel cost is normal
+
+9. A movie ticket costs ₹200 per person. If the customer books more than 5 tickets, they receive a 15% discount. Write a program to calculate the total ticket cost, discount, and final amount.
+
+INPUT
+
+tickets =int(input("Enter the number of tickets:"))
+total =tickets*200
+if tickets>5:
+    discount =total*15/100
+else:
+    discount =0
+final_amount =total-discount    
+print("Total tickets cost:",total)
+print("Discount:",discount)
+print("Final amount:",final_amount)  
+
+OUTPUT
+
+Enter the number of tickets:10
+Total tickets cost: 2000
+Discount: 300.0
+Final amount: 1700.0
+
+10. Calculate an electricity bill based on units consumed:
+
+· First 100 units → ₹2/unit
+
+· 101–200 units → ₹3/unit
+
+· Above 200 units → ₹5/unit
+
+Calculate the total bill and display "High Usage" if the bill exceeds ₹2,000; otherwise, display "Normal Usage".
+
+INPUT
+
+units =int(input("Enter units consumed:"))
+if units<=100:
+    bill =units*2
+elif units<=200:
+    bill =unit*3
+else:
+    bill =unit*5
+print("total bill:",bill)
+if bill>2000:
+   print("High usage")
+else:
+    print("Normal usage")
+
+OUTPUT
+
+Enter units consumed:76
+total bill: 152
+Normal usage
+
+
+
+     
+
+
+
+
+
+        
+
